@@ -9,10 +9,13 @@ Back-end: NodeJS.
 Banco de Dados: MySQL.
 
 A equipe é formada por:
+
 Jonas dos Santos Antunes
-github.com/Lebedeu
+
+https://github.com/Lebedeu
 
 Eduardo Cássio Wenceslau
-github.com/Pozyel
+
+https://github.com/Pozyel
 
 
