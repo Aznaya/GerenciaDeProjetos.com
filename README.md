@@ -8,3 +8,11 @@ Front-end: Angular, TypeScript.
 Back-end: NodeJS.
 Banco de Dados: MySQL.
 
+A equipe é formada por:
+Jonas dos Santos Antunes
+github.com/Lebedeu
+
+Eduardo Cássio Wenceslau
+github.com/Pozyel
+
+
