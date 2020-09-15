@@ -1,0 +1,19 @@
+{
+  "name": "gerenciadeprojetos.com",
+  "version": "1.0.0",
+  "description": "Projeto AC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lebedeu/GerenciaDeProjetos.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lebedeu/GerenciaDeProjetos.com/issues"
+  },
+  "homepage": "https://github.com/Lebedeu/GerenciaDeProjetos.com#readme"
+}
