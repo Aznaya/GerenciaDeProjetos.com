@@ -1,0 +1,13 @@
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    font-size: xx-large;
+    color: white;
+
+}
+.text{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
