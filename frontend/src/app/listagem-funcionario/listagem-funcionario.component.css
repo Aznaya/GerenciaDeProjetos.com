@@ -1,0 +1,26 @@
+.content {
+    margin-top: 40px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .table {
+    padding: 15px;
+    background-color: #191919;
+    border-style: solid;
+    border-radius: 24px;
+  }
+  
+  th {
+    padding: 5px;
+  }
+  
+  td {
+    padding: 5px;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+  }
+  

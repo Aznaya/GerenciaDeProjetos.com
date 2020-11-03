@@ -1,1 +1,37 @@
-<p>cadastro-func works!</p>
+<div>
+    <form class="box" (ngSubmit)="f.form.valid && saveFuncionario(f)" #f="ngForm" novalidate>
+        <h1>Registrar Funcionário</h1>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" [(ngModel)]="funcionario.nome" id="nome" name="nome" #nome="ngModel" required
+                class="form-control" [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }"
+                placeholder="Nome">
+            <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
+                <div *ngIf="nome.errors.required">Nome é obrigatório</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="horas_semanais">Horas Disponíveis</label>
+            <input type="number" [(ngModel)]="funcionario.horas_semanais" id="horas_semanais" name="horas_semanais"
+                #horas_semanais="ngModel" required class="form-control"
+                [ngClass]="{ 'is-invalid': f.submitted && horas_semanais.invalid }"
+                placeholder="Carga Horária Semanal">
+            <div *ngIf="f.submitted && horas_semanais.invalid" class="invalid-feedback">
+                <div *ngIf="horas_semanais.errors.required">A carga horaria é obrigatória</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="codigo_projeto">Codigo do Projeto Atual</label>
+            <input type="number" [(ngModel)]="funcionario.codigo_projeto" id="codigo_projeto" name="codigo_projeto"
+                #codigo_projeto="ngModel" required class="form-control"
+                [ngClass]="{ 'is-invalid': f.submitted && codigo_projeto.invalid }"
+                placeholder="Projeto atual">
+            <div *ngIf="f.submitted && codigo_projeto.invalid" class="invalid-feedback">
+                <div *ngIf="codigo_projeto.errors.required">O codigo do projeto é obrigatório</div>
+            </div>
+        </div>
+
+        <button type="submit" >Registrar</button>
+        <button type="reset" (click)="cleanForm(f)">Limpar</button>
+    </form>
+</div>

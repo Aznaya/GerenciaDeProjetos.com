@@ -1,26 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { CadastroFuncComponent } from './cadastro-func/cadastro-func.component';
+import {RouterModule, Routes} from '@angular/router';
 import { CadastroProComponent } from './cadastro-pro/cadastro-pro.component';
+import { HomeComponent } from './home/home.component';
+import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 import { ListagemFuncionarioComponent } from './listagem-funcionario/listagem-funcionario.component';
 import { ListagemProjetoComponent } from './listagem-projeto/listagem-projeto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     CadastroFuncComponent,
     CadastroProComponent,
+    HomeComponent,
     ListagemFuncionarioComponent,
     ListagemProjetoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

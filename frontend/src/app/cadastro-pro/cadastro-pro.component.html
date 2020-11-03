@@ -1,1 +1,38 @@
-<p>cadastro-pro works!</p>
+<div>
+    <form class="box" (ngSubmit)="f.form.valid && saveProjeto(f)" #f="ngForm" novalidate>
+        <h1>Registrar Projeto</h1>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" [(ngModel)]="projeto.nome" id="nome" name="nome" #nome="ngModel" required
+                class="form-control" [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }"
+                placeholder="Nome">
+            <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
+                <div *ngIf="nome.errors.required">Nome é obrigatório</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="registro_funcionario">Registro do Funcionario Responsável</label>
+            <input type="number" [(ngModel)]="projeto.registro_funcionario" id="registro_funcionario"
+                name="registro_funcionario" #registro_funcionario="ngModel" required class="form-control"
+                [ngClass]="{ 'is-invalid': f.submitted && registro_funcionario.invalid }"
+                placeholder="Registro do Responsável">
+            <div *ngIf="f.submitted && registro_funcionario.invalid" class="invalid-feedback">
+                <div *ngIf="registro_funcionario.errors.required">O registro do funcionário responsável é obrigatório
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="horas_estimadas">Horas estimadas para o projeto</label>
+            <input type="number" [(ngModel)]="projeto.horas_estimadas" id="horas_estimadas" name="horas_estimadas"
+                #horas_estimadas="ngModel" required class="form-control"
+                [ngClass]="{ 'is-invalid': f.submitted && horas_estimadas.invalid }"
+                placeholder="Horas estimadas">
+            <div *ngIf="f.submitted && horas_estimadas.invalid" class="invalid-feedback">
+                <div *ngIf="horas_estimadas.errors.required">É necessario uma estimativa de tempo</div>
+            </div>
+        </div>
+
+        <button type="submit">Registrar</button>
+        <button type="reset" (click)="cleanForm(f)">Limpar</button>
+    </form>
+</div>

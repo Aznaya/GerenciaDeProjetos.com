@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FuncionarioService } from "../services/funcionario.service";
+import { Funcionario } from "../models/funcionario";
 
 @Component({
   selector: 'app-listagem-funcionario',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListagemFuncionarioComponent implements OnInit {
 
-  constructor() { }
+  funcionario = {} as Funcionario;
+  funcionarios: Funcionario[];
+
+  constructor(private funcionarioService: FuncionarioService) { }
 
   ngOnInit(): void {
+    console.log("listando funcionarios")
+    this.getFuncionario();
+  }
+
+  getFuncionario() {
+    this.funcionarioService.getFuncionario().subscribe((funcionarios: Funcionario[]) => {
+      this.funcionarios = funcionarios;
+    });
   }
 
 }
