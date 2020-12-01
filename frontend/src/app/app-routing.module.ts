@@ -8,19 +8,16 @@ import { ListagemProjetoComponent } from './listagem-projeto/listagem-projeto.co
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', component: ListagemProjetoComponent
   },
   {
-    path: 'cadastrofunc', component: CadastroFuncComponent
+    path: 'register-employee', component: CadastroFuncComponent
   },
   {
-    path: 'cadastropro', component: CadastroProComponent
+    path: 'register-project', component: CadastroProComponent
   },
   {
-    path: 'listp', component: ListagemProjetoComponent
-  },
-  {
-    path: 'listf', component: ListagemFuncionarioComponent
+    path: 'list-employee', component: ListagemFuncionarioComponent
   }
 ];
 

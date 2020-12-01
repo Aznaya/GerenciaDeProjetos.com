@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`funcionario` (
   `registro` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(50) NOT NULL,
   `horas_semanais` FLOAT NOT NULL,
-  `codigo_projeto` INT NOT NULL,
+  `codigo_projeto` INT,
   PRIMARY KEY (`registro`, `codigo_projeto`),
   INDEX `fk_funcionario_projeto_idx` (`codigo_projeto` ASC) VISIBLE,
   CONSTRAINT `fk_funcionario_projeto`

@@ -1,10 +1,5 @@
 exports.list = function (req, res) {
 
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-    res.header("X-Powered-By", ' 3.2.1')
-
     req.getConnection(function (err, connection) {
         if (err) return res.status(400).json();
         connection.query('SELECT * FROM funcionario', [], function (err, result) {
@@ -16,12 +11,6 @@ exports.list = function (req, res) {
 }
 
 exports.create = function (req, res) {
-
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-    res.header("X-Powered-By", ' 3.2.1')
-
     var data = req.body;
 
     req.getConnection(function (err, connection) {
@@ -35,12 +24,6 @@ exports.create = function (req, res) {
 }
 
 exports.getById = function (req, res) {
-
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-    res.header("X-Powered-By", ' 3.2.1')
-
     var Registro = req.params.Registro;
 
     req.getConnection(function (err, connection) {
@@ -55,12 +38,6 @@ exports.getById = function (req, res) {
 }
 
 exports.update = function (req, res) {
-
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-    res.header("X-Powered-By", ' 3.2.1')
-
     var data = req.body,
         Registro = req.params.Registro;
 
@@ -76,12 +53,6 @@ exports.update = function (req, res) {
 }
 
 exports.delete = function (req, res) {
-
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-    res.header("X-Powered-By", ' 3.2.1')
-
     var Registro = req.params.Registro;
 
     req.getConnection(function (err, connection) {

@@ -1,66 +1,78 @@
-.box{
-    width: 300px;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #191919;
-    text-align: center;
-    border-radius: 20px;
-  }
-  .box h1{
-    color: white;
-    text-transform: uppercase;
-    font-weight: 400;
-  }
-  .box input[type = "text"], .box input[type = "number"]{
-    border: 0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #3498db;
-    padding: 14px 10px;
-    width: 200px;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
-  }
-  .box input[type = "text"]:focus, .box input[type = "number"]:focus{
-    width: 280px;
-    border-color: #2ecc71;
-  }
-  .box input[type = "text"]:hover, .box input[type = "number"]:hover{
-    width: 280px;
-    border-color: #2ecc71;
-  }
-  .box input[type = "number"]::-webkit-inner-spin-button{
-    -webkit-appearance: none;
-  }
-  .box input[type = "number"]{
-    -moz-appearance: textfield;
-    appearance: textfiel;
-  }
-  .box button{
-    border: 0;
-    background: none;
-    margin: 20px 10px;
-    text-align: center;
-    border: 2px solid #2ecc71;
-    padding: 14px 40px;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
-    cursor: pointer;
-  }
-  .box button:hover{
-    background-color: #2ecc71;
-  }
-  .box label{
-    color: white;
-    text-transform: uppercase;
-    font-weight: 100;
-  }
+.box {
+  color: white;
+  width: 100%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #191919;
+  text-align: center;
+  border-style: solid;
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.box input[type="text"],
+.box input[type="number"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box input[type="text"]:focus,
+.box input[type="number"]:focus {
+  width: 280px;
+  border-color: #2ecc71;
+}
+
+.box input[type="text"]:hover,
+.box input[type="number"]:hover {
+  width: 280px;
+  border-color: #2ecc71;
+}
+
+.box input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.box input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfiel;
+}
+
+.box button {
+  border: 0;
+  background: none;
+  margin: 20px 10px;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box button:hover {
+  background-color: #2ecc71;
+}
+
+.box label {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 100;
+}

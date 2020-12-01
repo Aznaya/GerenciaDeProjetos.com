@@ -1,21 +1,23 @@
+<app-home></app-home>
+
 <div class="content" role="main">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Registro</th>
-          <th>Nome</th>
-          <th>Carga Horaria Disponivel</th>
-          <th>Projeto Atual</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let funcionario of funcionarios">
-          <td>{{funcionario.registro}}</td>
-          <td>{{funcionario.nome}}</td>
-          <td>{{funcionario.horas_semanais}}</td>
-          <td>{{funcionario.codigo_projeto}}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-  </div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Registro</th>
+        <th>Nome</th>
+        <th>Carga Horaria Disponivel</th>
+        <th>Projeto Atual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let funcionario of funcionarios">
+        <td>{{funcionario.registro}}</td>
+        <td>{{funcionario.nome}}</td>
+        <td>{{funcionario.horas_semanais}}</td>
+        <td>{{funcionario.codigo_projeto}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

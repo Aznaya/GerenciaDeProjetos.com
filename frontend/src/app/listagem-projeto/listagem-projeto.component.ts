@@ -9,6 +9,7 @@ import { ProjetoService } from '../services/projeto.service';
 })
 export class ListagemProjetoComponent implements OnInit {
 
+
   projeto = {} as Projeto;
   projetos: Projeto[];
 

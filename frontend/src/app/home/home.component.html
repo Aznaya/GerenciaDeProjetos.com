@@ -1,26 +1,22 @@
-<div class="content" role="main">
-
-    <h1>Menu Principal</h1>
-  
-    <div class="card-container">
-      <div class="card card-small" routerLink="/cadastrofunc" tabindex="0">
-        <span>Cadastrar Funcionários</span>
-      </div>
-  
-      <div class="card card-small" routerLink="/cadastropro" tabindex="0">
-        <span>Cadastrar Projeto</span>
-      </div>
-  
-      <div class="card card-small" routerLink="/listf" tabindex="0">
-        <span>Gerenciar Funcionários</span>
-      </div>
-  
-      <div class="card card-small" routerLink="/listp" tabindex="0">
-        <span>Gerenciar Projetos</span>
-      </div>
-  
+<div class="navbar" role="main">
+  <div class="card-container">
+    <div class="card card-small" routerLink="/register-employee" tabindex="0">
+      <span>Cadastrar Funcionários</span>
     </div>
+
+    <div class="card card-small" routerLink="/register-project" tabindex="0">
+      <span>Cadastrar Projeto</span>
+    </div>
+
+    <div class="card card-small" routerLink="/list-employee" tabindex="0">
+      <span>Gerenciar Funcionários</span>
+    </div>
+
+    <div class="card card-small" routerLink="/" tabindex="0">
+      <span>Gerenciar Projetos</span>
+    </div>
+
   </div>
-  
-  <router-outlet></router-outlet>
-  
+</div>
+
+<router-outlet></router-outlet>
