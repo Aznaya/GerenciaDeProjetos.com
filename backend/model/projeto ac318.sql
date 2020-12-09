@@ -25,7 +25,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`projeto` (
   `nome` VARCHAR(30) NOT NULL,
   `registro_funcionario` INT NOT NULL,
   `horas_estimadas` FLOAT NOT NULL,
-  PRIMARY KEY (`codigo`))
+  PRIMARY KEY (`codigo`, `registro_funcionario`),
+  INDEX `fk_projeto_funcionario_idx` (`registro_funcionario` ASC) VISIBLE,
+  CONSTRAINT `fk_projeto_funcionario`
+    FOREIGN KEY (`registro_funcionario`)
+    REFERENCES `mydb`.`funcionario` (`registro`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -37,18 +43,15 @@ CREATE TABLE IF NOT EXISTS `mydb`.`funcionario` (
   `nome` VARCHAR(50) NOT NULL,
   `horas_semanais` FLOAT NOT NULL,
   `codigo_projeto` INT,
-  PRIMARY KEY (`registro`, `codigo_projeto`),
-  INDEX `fk_funcionario_projeto_idx` (`codigo_projeto` ASC) VISIBLE,
-  CONSTRAINT `fk_funcionario_projeto`
-    FOREIGN KEY (`codigo_projeto`)
-    REFERENCES `mydb`.`projeto` (`codigo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`registro`))
 ENGINE = InnoDB;
-
-
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+#drop database mydb;
+select * from `projeto`;
+select * from `funcionario`;
+

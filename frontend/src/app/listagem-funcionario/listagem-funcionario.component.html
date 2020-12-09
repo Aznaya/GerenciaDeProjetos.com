@@ -15,7 +15,14 @@
         <td>{{funcionario.registro}}</td>
         <td>{{funcionario.nome}}</td>
         <td>{{funcionario.horas_semanais}}</td>
-        <td>{{funcionario.codigo_projeto}}</td>
+        <div *ngFor="let projeto of projetos">
+          <div class="td" *ngIf="funcionario.codigo_projeto == projeto.codigo">
+            {{projeto.nome}}
+          </div>
+          <div class="td" *ngIf="funcionario.codigo_projeto == 0">
+            Disponivel
+          </div>
+        </div>
       </tr>
     </tbody>
   </table>

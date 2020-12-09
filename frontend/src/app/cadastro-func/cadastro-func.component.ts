@@ -20,8 +20,12 @@ export class CadastroFuncComponent implements OnInit {
   }
 
   saveFuncionario(form: NgForm) {
+    if(this.funcionario.codigo_projeto == null) {
+      this.funcionario.codigo_projeto = 0;
+    };
     this.funcionarioService.saveFuncionario(this.funcionario).subscribe(() => {
       this.cleanForm(form);
+      window.alert('Cadastro Realizado')
     });
   }
 

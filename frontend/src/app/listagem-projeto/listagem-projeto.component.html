@@ -1,22 +1,26 @@
-<app-home><</app-home>
+<app-home></app-home>
 
 <div class="content" role="main">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Código</th>
-          <th>Nome</th>
-          <th>Responsavel pelo Projeto</th>
-          <th>Carga Horario Estimada</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let projeto of projetos">
-          <td>{{projeto.codigo}}</td>
-          <td>{{projeto.nome}}</td>
-          <td>{{projeto.registro_funcionario}}</td>
-          <td>{{projeto.horas_estimadas}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Responsavel pelo Projeto</th>
+        <th>Carga Horario Estimada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let projeto of projetos">
+        <td>{{projeto.codigo}}</td>
+        <td>{{projeto.nome}}</td>
+        <div *ngFor="let funcionario of funcionarios">
+          <div class="td" *ngIf="projeto.registro_funcionario == funcionario.registro">
+            {{funcionario.nome}}
+          </div>
+        </div>
+        <td>{{projeto.horas_estimadas}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
