@@ -38,11 +38,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
     <td align="center"><a href="https://rocketseat.com.br"><img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/53447587?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Eduadro Cássio Wenceslau</b></sub></a><br /><a href="https://rocketseat.com.br/" title="Rocketseat">👨‍🚀</a>     </td>
    </tr>
 </table>
----
+
 <h2>Autor<h2>
   <table>
   <tr>
     <td align="center"><a href="https://rocketseat.com.br"><img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/53447664?s=460&v=4" width="100px;" alt=""/><br /><sub><b>Jonas dos Santos Antunes</b></sub></a><br /><a href="https://rocketseat.com.br/" title="Rocketseat">👨‍🚀</a>     </td>
    </tr>
 </table>
----
+
