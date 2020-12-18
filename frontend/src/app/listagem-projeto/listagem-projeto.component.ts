@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Projeto } from '../models/projeto';
 import { ProjetoService } from '../services/projeto.service';
-
-import { FuncionarioService } from "../services/funcionario.service";
-import { Funcionario } from "../models/funcionario";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listagem-projeto',
@@ -14,15 +12,11 @@ export class ListagemProjetoComponent implements OnInit {
   projeto = {} as Projeto;
   projetos: Projeto[];
 
-  funcionario = {} as Funcionario;
-  funcionarios: Funcionario[];
-
-  constructor(private projetoService: ProjetoService, private funcionarioService: FuncionarioService) { }
+  constructor(private projetoService: ProjetoService, private router: Router) { }
 
   ngOnInit(): void {
     console.log("Listando projetos");
     this.getProjeto();
-    this.getFuncionario();
   }
 
   getProjeto() {
@@ -31,10 +25,15 @@ export class ListagemProjetoComponent implements OnInit {
     });
   }
 
-  getFuncionario() {
-    this.funcionarioService.getFuncionario().subscribe((funcionarios: Funcionario[]) => {
-      this.funcionarios = funcionarios;
-    });
+  updateProjeto(codigo: Number) {
+    console.log(`Editando: ${codigo}`)
+    // Ir para o edita-fun mandando o registro como parametro
+    this.router.navigate([`/update-project/${codigo}`])
   }
 
+  deleteProjeto(any: Number) {
+    this.projetoService.deleteProjeto(any).subscribe();
+    window.alert('Projeto Deletado');
+    location.reload(true);
+  }
 }

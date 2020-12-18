@@ -1,8 +1,8 @@
 <app-home></app-home>
 
 <div>
-    <form class="box" (ngSubmit)="f.form.valid && saveFuncionario(f)" #f="ngForm" novalidate>
-        <h1>Registrar Funcionário</h1>
+    <form class="box" (ngSubmit)="f.form.valid && updateFuncionario(f)" #f="ngForm" novalidate>
+        <h1>Atualizar Funcionário</h1>
         <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" [(ngModel)]="funcionario.nome_funcionario" id="nome" name="nome" #nome="ngModel" required
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <button type="submit" >Registrar</button>
+        <button type="submit" >Atualizar</button>
         <button type="reset" (click)="cleanForm(f)">Limpar</button>
     </form>
 </div>

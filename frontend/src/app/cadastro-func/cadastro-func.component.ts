@@ -25,7 +25,7 @@ export class CadastroFuncComponent implements OnInit {
     };
     this.funcionarioService.saveFuncionario(this.funcionario).subscribe(() => {
       this.cleanForm(form);
-      window.alert('Cadastro Realizado')
+      window.alert('Cadastro Realizado');
     });
   }
 

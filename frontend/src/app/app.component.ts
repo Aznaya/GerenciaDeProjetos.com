@@ -64,14 +64,14 @@ export class AppComponent implements OnInit {
 
   // deleta um funcionario
   deleteFuncionario(funcionario: Funcionario) {
-    this.funcionarioService.deleteFuncionario(funcionario).subscribe(() => {
+    this.funcionarioService.deleteFuncionario(funcionario.registro).subscribe(() => {
       this.getFuncionario();
     });
   }
 
   // deleta um projeto
   deleteProjeto(projeto: Projeto) {
-    this.projetoService.deleteProjeto(projeto).subscribe(() => {
+    this.projetoService.deleteProjeto(projeto.codigo).subscribe(() => {
       this.getProjeto();
     });
   }

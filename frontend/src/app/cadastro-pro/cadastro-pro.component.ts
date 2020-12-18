@@ -3,24 +3,27 @@ import { NgForm } from '@angular/forms';
 import { Projeto } from '../models/projeto';
 import { ProjetoService } from '../services/projeto.service';
 
+import { FuncionarioService } from "../services/funcionario.service";
+
 @Component({
   selector: 'app-cadastro-pro',
   templateUrl: './cadastro-pro.component.html',
   styleUrls: ['./cadastro-pro.component.css']
 })
 export class CadastroProComponent implements OnInit {
-
   projeto = {} as Projeto;
   projetos: Projeto[];
 
-  constructor(private funcionarioService: ProjetoService) { }
+  constructor(private projetoService: ProjetoService, private funcionarioService: FuncionarioService) { }
 
   ngOnInit(): void {  }
 
   saveProjeto(form: NgForm) {
-    this.funcionarioService.saveProjeto(this.projeto).subscribe(() => {
+    this.projetoService.saveProjeto(this.projeto).subscribe(() => {
       this.cleanForm(form);
+      window.alert('Cadastro Realizado')
     });
+    this.funcionarioService.updateResponsavelProjeto(this.projeto).subscribe(() => {})
   }
 
   // limpa o formulario

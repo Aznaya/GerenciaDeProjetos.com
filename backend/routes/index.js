@@ -15,10 +15,10 @@ App.get('/funcionarios', function (req, res) {
   });
 });
 
+console.log('dentro do index')
 App.route('/projeto')
   .get(Projeto.list)
   .post(Projeto.create);
-  
 
 App.route('/projeto/:id')
   .get(Projeto.getById)

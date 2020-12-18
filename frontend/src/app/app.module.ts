@@ -11,6 +11,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { ListagemFuncionarioComponent } from './listagem-funcionario/listagem-funcionario.component';
 import { ListagemProjetoComponent } from './listagem-projeto/listagem-projeto.component';
+import { EditaFuncComponent } from './edita-func/edita-func.component';
+import { EditaProComponent } from './edita-pro/edita-pro.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ListagemProjetoComponent } from './listagem-projeto/listagem-projeto.co
     CadastroProComponent,
     HomeComponent,
     ListagemFuncionarioComponent,
-    ListagemProjetoComponent
+    ListagemProjetoComponent,
+    EditaFuncComponent,
+    EditaProComponent
   ],
   imports: [
     BrowserModule,

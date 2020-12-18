@@ -29,7 +29,7 @@ export class ProjetoService {
   }
 
   //Obtem um Projeto por id
-  getProjetoById(id: number): Observable<Projeto> {
+  getProjetoById(id: Number): Observable<Projeto> {
     return this.httpClient.get<Projeto>(this.url + '/' + id)
       .pipe(
         retry(2),
@@ -48,7 +48,7 @@ export class ProjetoService {
 
   //Atualiza um Projeto
   updateProjeto(projeto: Projeto): Observable<Projeto> {
-    return this.httpClient.put<Projeto>(this.url + '/' + projeto.codigo, JSON.stringify(projeto))
+    return this.httpClient.put<Projeto>(this.url + '/' + projeto.codigo, JSON.stringify(projeto), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -56,8 +56,8 @@ export class ProjetoService {
   }
 
   //Deletar Projeto
-  deleteProjeto(projeto: Projeto) {
-    return this.httpClient.delete<Projeto>(this.url + '/' + projeto.codigo, this.httpOptions)
+  deleteProjeto(codigo: Number) {
+    return this.httpClient.delete<Projeto>(this.url + '/' + codigo, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

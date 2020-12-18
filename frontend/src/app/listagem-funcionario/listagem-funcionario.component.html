@@ -6,23 +6,21 @@
       <tr>
         <th>Registro</th>
         <th>Nome</th>
-        <th>Carga Horaria Disponivel</th>
         <th>Projeto Atual</th>
+        <th>Carga Horaria Disponivel</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let funcionario of funcionarios">
         <td>{{funcionario.registro}}</td>
-        <td>{{funcionario.nome}}</td>
+        <td>{{funcionario.nome_funcionario}}</td>
+        <td *ngIf="funcionario.codigo_projeto != 0">{{funcionario.nome_projeto}}</td>
+        <td *ngIf="funcionario.codigo_projeto == 0">Disponivel</td>
         <td>{{funcionario.horas_semanais}}</td>
-        <div *ngFor="let projeto of projetos">
-          <div class="td" *ngIf="funcionario.codigo_projeto == projeto.codigo">
-            {{projeto.nome}}
-          </div>
-          <div class="td" *ngIf="funcionario.codigo_projeto == 0">
-            Disponivel
-          </div>
-        </div>
+        <td>
+          <a (click)="updateFuncionario(funcionario.registro)" style="cursor: pointer;">Editar</a> / 
+          <a (click)="deleteFuncionario(funcionario.registro)" style="cursor: pointer;">Deletar</a>
+        </td>
       </tr>
     </tbody>
   </table>

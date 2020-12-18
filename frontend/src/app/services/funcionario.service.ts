@@ -3,6 +3,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Funcionario } from "../models/funcionario";
+import { Projeto } from '../models/projeto';
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +31,7 @@ export class FuncionarioService {
   }
 
   //Obtem um funcionario por id
-  getFuncionarioById(id: number): Observable<Funcionario> {
+  getFuncionarioById(id: Number): Observable<Funcionario> {
     return this.httpClient.get<Funcionario>(this.url + '/' + id)
       .pipe(
         retry(2),
@@ -46,9 +48,17 @@ export class FuncionarioService {
       )
   }
 
+  updateResponsavelProjeto(projeto: Projeto): Observable<Funcionario> {
+    return this.httpClient.put<Funcionario>(this.url + '/' + projeto, JSON.stringify(projeto))
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
   //Atualiza um funcionario
   updateFuncionario(funcionario: Funcionario): Observable<Funcionario> {
-    return this.httpClient.put<Funcionario>(this.url + '/' + funcionario.registro, JSON.stringify(funcionario))
+    return this.httpClient.put<Funcionario>(this.url + '/' + funcionario.registro, JSON.stringify(funcionario), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -56,8 +66,8 @@ export class FuncionarioService {
   }
 
   //Deletar funcionario
-  deleteFuncionario(funcionario: Funcionario) {
-    return this.httpClient.delete<Funcionario>(this.url + '/' + funcionario.registro, this.httpOptions)
+  deleteFuncionario(registro: Number) {
+    return this.httpClient.delete<Funcionario>(this.url + '/' + registro, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

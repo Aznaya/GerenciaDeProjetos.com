@@ -1,7 +1,7 @@
 <app-home></app-home>
 
 <div>
-    <form class="box" (ngSubmit)="f.form.valid && saveProjeto(f)" #f="ngForm" novalidate>
+    <form class="box" (ngSubmit)="f.form.valid && updateProjeto(f)" #f="ngForm" novalidate>
         <h1>Registrar Projeto</h1>
         <div class="form-group">
             <label for="nome">Nome</label>
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <button type="submit">Registrar</button>
+        <button type="submit">Atualizar</button>
         <button type="reset" (click)="cleanForm(f)">Limpar</button>
     </form>
 </div>

@@ -22,7 +22,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`projeto` (
   `codigo` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(30) NOT NULL,
+  `nome_projeto` VARCHAR(30) NOT NULL,
   `registro_funcionario` INT NOT NULL,
   `horas_estimadas` FLOAT NOT NULL,
   PRIMARY KEY (`codigo`, `registro_funcionario`),
@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`funcionario` (
   `registro` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(50) NOT NULL,
+  `nome_funcionario` VARCHAR(50) NOT NULL,
   `horas_semanais` FLOAT NOT NULL,
   `codigo_projeto` INT,
   PRIMARY KEY (`registro`))
@@ -52,6 +52,22 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 #drop database mydb;
+INSERT INTO funcionario values (1,'Jonas',40,0);
+INSERT INTO projeto values (1,'ProjetoAICO',1,800);
+UPDATE funcionario SET codigo_projeto = 1 WHERE registro = 1;
+INSERT INTO funcionario values (2,'Ana',40,1);
+INSERT INTO funcionario values (3,'Luiza',40,0);
+
 select * from `projeto`;
 select * from `funcionario`;
 
+SELECT projeto.codigo, projeto.nome_projeto, funcionario.nome_funcionario, projeto.horas_estimadas
+FROM projeto, funcionario
+WHERE funcionario.registro = projeto.registro_funcionario;
+
+SELECT funcionario.registro, funcionario.nome_funcionario, projeto.nome_projeto, funcionario.codigo_projeto, funcionario.horas_semanais
+FROM funcionario, projeto
+WHERE projeto.codigo = funcionario.codigo_projeto or funcionario.codigo_projeto = 0;
+
+# Atualizar o funcionario responsavel durante a criação do projeto
+UPDATE funcionario SET codigo_projeto = 1 WHERE registro = 1;
