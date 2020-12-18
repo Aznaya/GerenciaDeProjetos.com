@@ -18,7 +18,7 @@
 As seguintes ferramentas foram usadas na construção do projeto:
 
 
-- [Angular](https://angular.io)
+- [Angular10](https://angular.io)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/pt-br/)
