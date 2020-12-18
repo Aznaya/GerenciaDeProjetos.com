@@ -7,12 +7,3 @@ body {
   background-color: #061415;
   display: block;
 }
-
-header {
-  display: block;
-  justify-self: start;
-  background-color: #191919;
-  color: white;
-  padding: 5px;
-  border-width: solid;
-}
