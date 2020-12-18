@@ -26,7 +26,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ---
 ## ⚙️ Funcionalidades
 
-  - [x] Empresas ou entidades podem se cadastrar na plataforma web enviando:
+  - [x] Empresas ou entidades podem se cadastrar na plataforma web:
   - [x] Cadastrar um projeto ou funcionário
   - [x] Listar projetos e funcionários
   - [x] Editar projetos ou funcionários
