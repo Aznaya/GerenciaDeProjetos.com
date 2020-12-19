@@ -2,9 +2,7 @@ exports.list = function (req, res) {
     req.getConnection(function (err, connection) {
         if (err) return res.status(400).json();
         connection.query(
-            'SELECT projeto.codigo, projeto.nome_projeto, funcionario.nome_funcionario, projeto.horas_estimadas '+
-            'FROM projeto, funcionario '+
-            'WHERE projeto.registro_funcionario = funcionario.registro;',
+            'SELECT * FROM projeto; ',
             [], function (err, result) {
             if (err) return res.status(400).json();
 

@@ -51,7 +51,7 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-#drop database mydb;
+drop database mydb;
 INSERT INTO funcionario values (1,'Jonas',40,0);
 INSERT INTO projeto values (1,'ProjetoAICO',1,800);
 UPDATE funcionario SET codigo_projeto = 1 WHERE registro = 1;

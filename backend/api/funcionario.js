@@ -3,9 +3,7 @@ exports.list = function (req, res) {
     req.getConnection(function (err, connection) {
         if (err) return res.status(400).json();
         connection.query(
-            'SELECT funcionario.registro, funcionario.nome_funcionario, projeto.nome_projeto, funcionario.codigo_projeto, funcionario.horas_semanais '+
-            'FROM funcionario, projeto '+
-            'WHERE projeto.codigo = funcionario.codigo_projeto or funcionario.codigo_projeto = 0;',
+            'SELECT * FROM funcionario; ',
             [], function (err, result) {
             if (err) return res.status(400).json();
 

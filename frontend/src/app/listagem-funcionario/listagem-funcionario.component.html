@@ -14,11 +14,17 @@
       <tr *ngFor="let funcionario of funcionarios">
         <td>{{funcionario.registro}}</td>
         <td>{{funcionario.nome_funcionario}}</td>
-        <td *ngIf="funcionario.codigo_projeto != 0">{{funcionario.nome_projeto}}</td>
-        <td *ngIf="funcionario.codigo_projeto == 0">Disponivel</td>
+        <div *ngFor="let projeto of projetos">
+          <div class="td" *ngIf="funcionario.codigo_projeto == projeto.codigo">
+            {{projeto.nome_projeto}}
+          </div>
+        </div>
+        <div class="td" *ngIf="funcionario.codigo_projeto == 0">
+          Disponivel
+        </div>
         <td>{{funcionario.horas_semanais}}</td>
         <td>
-          <a (click)="updateFuncionario(funcionario.registro)" style="cursor: pointer;">Editar</a> / 
+          <a (click)="updateFuncionario(funcionario.registro)" style="cursor: pointer;">Editar</a> /
           <a (click)="deleteFuncionario(funcionario.registro)" style="cursor: pointer;">Deletar</a>
         </td>
       </tr>
