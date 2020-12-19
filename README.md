@@ -10,7 +10,7 @@
 </p>
 
 <h4 align="center">
-	🚧   Concluído 🚀 🚧
+	🚧   Concluído   🚧
 </h4>
 
 # 🛠 Tecnologias
@@ -31,6 +31,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
   - [x] Listar projetos e funcionários
   - [x] Editar projetos ou funcionários
   - [x] Deletar projetos ou funcionários
+
+---
+### 🚀 Executando
+
+- 1º Abrir o Banco de Dados que está dentro da pasta model do Back-end com user como nome de usuário, root como senha na porta 3306.
+- 2º Executar o comando npm start dentro do Back-end.
+- 3º Executar o comando ng serve dentro do Front-end.
 
 ---
 <h2>Contribuidor</h2>
